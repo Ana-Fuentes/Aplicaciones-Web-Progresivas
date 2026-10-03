@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Mis Tareas</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- APP SHELL -->
+  <header class="app-header">
+    <div class="header-content">
+      <h1>Mis Tareas</h1>
+
+      <div id="connection-status" class="connection-status online">
+        <span class="connection-dot"></span>
+        <span id="connection-text">En línea</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main">
+
+    <!-- Formulario que pertenece al Shell -->
+    <section class="task-section">
+      <form id="task-form" class="task-form">
+
+        <input
+          id="task-input"
+          type="text"
+          placeholder="Nueva tarea..."
+          autocomplete="off"
+          required
+        />
+
+        <button type="submit">
+          Agregar
+        </button>
+
+      </form>
+    </section>
+
+    <!-- CONTENIDO DINÁMICO -->
+    <section id="content-area" class="content-area">
+
+      <!-- Skeleton / mensaje de carga -->
+      <div id="loading" class="loading">
+        <div class="loading-spinner"></div>
+        <p>Cargando…</p>
+      </div>
+
+      <!-- La lista se genera dinámicamente con JavaScript -->
+      <ul id="task-list" class="task-list"></ul>
+
+    </section>
+
+  </main>
+
+  <!-- APP SHELL -->
+  <footer class="app-footer">
+    <p>Curso PWA · Semana 4</p>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+
+</body>
+</html>

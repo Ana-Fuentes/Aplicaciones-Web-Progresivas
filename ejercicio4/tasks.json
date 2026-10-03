@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "texto": "Repasar Flexbox y Grid",
+    "hecha": false
+  },
+  {
+    "id": 2,
+    "texto": "Maquetar la lista de tareas",
+    "hecha": false
+  },
+  {
+    "id": 3,
+    "texto": "Elegir el proyecto final",
+    "hecha": true
+  }
+]

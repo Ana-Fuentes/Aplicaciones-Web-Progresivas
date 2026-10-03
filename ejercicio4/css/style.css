@@ -1,0 +1,288 @@
+:root {
+  --color-primario: #1f3864;
+  --color-primario-claro: #4a6da8;
+  --color-fondo: #f4f6fb;
+  --color-texto: #1a1a1a;
+  --color-exito: #2e7d32;
+  --color-error: #c62828;
+  --radio: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+body {
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   APP SHELL - HEADER
+   ========================= */
+
+.app-header {
+  background: var(--color-primario);
+  color: white;
+  padding: 1rem;
+}
+
+.header-content {
+  max-width: 600px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.app-header h1 {
+  font-size: 1.5rem;
+}
+
+/* =========================
+   INDICADOR DE CONEXIÓN
+   ========================= */
+
+.connection-status {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.connection-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4caf50;
+}
+
+/* Estado en línea */
+
+.connection-status.online {
+  color: white;
+}
+
+.connection-status.online .connection-dot {
+  background: #4caf50;
+}
+
+/* Estado sin conexión */
+
+.connection-status.offline {
+  color: #ffdddd;
+}
+
+.connection-status.offline .connection-dot {
+  background: #f44336;
+}
+
+/* =========================
+   CONTENIDO PRINCIPAL
+   ========================= */
+
+.app-main {
+  flex: 1;
+
+  padding: 1rem;
+
+  max-width: 600px;
+  margin: 0 auto;
+
+  width: 100%;
+}
+
+/* =========================
+   FORMULARIO
+   ========================= */
+
+.task-section {
+  margin-bottom: 1rem;
+}
+
+.task-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.task-form input {
+  flex: 1;
+
+  padding: 0.6rem;
+
+  border: 1px solid #ccc;
+  border-radius: var(--radio);
+
+  font-size: 1rem;
+}
+
+.task-form input:focus {
+  outline: 2px solid var(--color-primario-claro);
+  border-color: var(--color-primario-claro);
+}
+
+.task-form button {
+  padding: 0.6rem 1rem;
+
+  background: var(--color-primario);
+  color: white;
+
+  border: none;
+  border-radius: var(--radio);
+
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.task-form button:hover {
+  background: var(--color-primario-claro);
+}
+
+/* =========================
+   ÁREA DE CONTENIDO
+   ========================= */
+
+.content-area {
+  background: #e9edf5;
+
+  padding: 1rem;
+
+  border-radius: var(--radio);
+
+  min-height: 150px;
+}
+
+/* =========================
+   LOADING / SKELETON
+   ========================= */
+
+.loading {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.75rem;
+
+  padding: 2rem;
+
+  color: #666;
+}
+
+.loading-spinner {
+  width: 30px;
+  height: 30px;
+
+  border: 4px solid #d5d9e2;
+  border-top-color: var(--color-primario);
+
+  border-radius: 50%;
+
+  animation: girar 1s linear infinite;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   LISTA DE TAREAS
+   ========================= */
+
+.task-list {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.5rem;
+}
+
+.task-item {
+  background: white;
+
+  border-radius: var(--radio);
+
+  padding: 0.75rem 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.task-item--done span {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.task-actions button {
+  border: none;
+
+  border-radius: 50%;
+
+  width: 28px;
+  height: 28px;
+
+  cursor: pointer;
+
+  font-size: 0.9rem;
+}
+
+.btn-complete {
+  background: #d7f2d7;
+}
+
+.btn-delete {
+  background: #f7d7d7;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.app-footer {
+  text-align: center;
+
+  padding: 1rem;
+
+  color: #888;
+
+  font-size: 0.85rem;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (min-width: 600px) {
+
+  .app-main {
+    max-width: 600px;
+  }
+
+  .task-item {
+    padding: 1rem 1.5rem;
+  }
+}

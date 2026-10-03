@@ -1,0 +1,126 @@
+:root {
+  --color-primario: #1f3864;
+  --color-primario-claro: #4a6da8;
+  --color-fondo: #f4f6fb;
+  --color-texto: #1a1a1a;
+  --radio: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+body {
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Mobile first: estilos base pensados para pantalla chica --- */
+
+.app-header {
+  background: var(--color-primario);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.app-main {
+  flex: 1;
+  padding: 1rem;
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.task-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.task-form input {
+  flex: 1;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radio);
+}
+
+.task-form button {
+  padding: 0.6rem 1rem;
+  background: var(--color-primario);
+  color: white;
+  border: none;
+  border-radius: var(--radio);
+  cursor: pointer;
+}
+
+.task-form button:hover {
+  background: var(--color-primario-claro);
+}
+
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task-item {
+  background: white;
+  border-radius: var(--radio);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.task-item--done span {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.task-actions button {
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.btn-complete {
+  background: #d7f2d7;
+}
+
+.btn-delete {
+  background: #f7d7d7;
+}
+
+.app-footer {
+  text-align: center;
+  padding: 1rem;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+/* --- A partir de aquí, ajustes solo para pantallas más grandes --- */
+@media (min-width: 600px) {
+  .app-main {
+    max-width: 600px;
+  }
+
+  .task-item {
+    padding: 1rem 1.5rem;
+  }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mis Tareas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Mis Tareas</h1>
+  </header>
+
+  <main class="app-main">
+    <form id="task-form" class="task-form">
+      <input
+        id="task-input"
+        type="text"
+        placeholder="Nueva tarea..."
+        required
+      />
+
+      <button type="submit">Agregar</button>
+    </form>
+
+    <!-- TODO 1: esta lista debe llenarse dinámicamente desde script.js,
+         no hardcodees <li> aquí -->
+
+    <ul id="task-list" class="task-list"></ul>
+  </main>
+
+  <footer class="app-footer">
+    <p>Curso PWA · Semana 3</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
